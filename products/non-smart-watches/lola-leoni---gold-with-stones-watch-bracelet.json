@@ -1,0 +1,20 @@
+{
+    "name": "LOLA LEONI - GOLD WITH STONES WATCH & BRACELET",
+    "type": "simple",
+    "regular_price": "500000",
+    "description": "This elegant and stylish gold plated watch features a multi coloured crystal set bazel and a matching bracelet. Presented in a signature Lola Leoni case.",
+    "short_description": "This elegant and stylish gold plated watch features a multi coloured crystal set bazel and a matching bracelet. Presented in a signature Lola Leoni case.",
+    "categories": [
+        {
+            "id": 279
+        },
+        {
+            "id": 280
+        }
+    ],
+    "images": [
+        {
+            "src": "http://localhost:8000/non-smart-watches/5031267040060.png"
+        }
+    ]
+}
