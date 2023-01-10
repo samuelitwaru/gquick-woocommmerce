@@ -40,7 +40,7 @@ def resize_image(img, size=(28, 28)):
 
 
 if __name__ == "__main__":
-    name = 'soul-ear-buds.jpg'
+    name = 'starsat-tv.jpg'
     img = cv2.imread(
         f'bad_images/{name}')
     bg = resize_image(img)

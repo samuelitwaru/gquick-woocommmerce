@@ -3,7 +3,7 @@ import numpy as np
 from product.create_product import create_product
 
 excel_data_df = pandas.read_excel(
-    'sheets/electronics.xlsx', sheet_name='vacuum-cleaners')
+    'sheets/accessories.xlsx', sheet_name='phone-holders')
 
 
 excel_data_df = excel_data_df.replace({np.nan: None})
@@ -23,8 +23,6 @@ for row in data:
     img_2 = row[6]
     addr = row[7]
 
-    # print('>>>>>>>>>>>', row[8])
-
     if not id:
         data = {
             "name": name,
@@ -33,10 +31,10 @@ for row in data:
             "short_description": desc,
             "categories": [
                 {
-                    "id": 155
+                    "id": 269
                 },
                 {
-                    "id": 287
+                    "id": 348
                 },
             ],
             "images": [
