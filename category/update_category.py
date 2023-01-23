@@ -16,25 +16,11 @@ def update_category(id, data):
 
 
 # 288 electronics
-electronics = [
-    282,
-    284,
-    285,
-    353,
-    354
+ids = [
+
 ]
 
-# 155 cosmetics
-cosmetics = [
-    291,
-    293,
-    292,
-    294,
-    295,
-]
-
-
-for id in cosmetics:
+for id in ids:
     data = {
         "parent": 228,
     }
