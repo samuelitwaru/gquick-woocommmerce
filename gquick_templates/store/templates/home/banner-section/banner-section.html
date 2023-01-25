@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container d-none d-xl-block">
+	<style type="text/css">
+		.sub-menu{
+			margin-left: -0px;
+			margin-right: 0px;
+			border-right: 1px solid #dddddd;
+			border-top: 1px solid #dddddd;
+			border-bottom: 1px solid #dddddd;
+			box-shadow: 10px 0 5px -1px #888;
+			transition-timing-function: linear;
+			transition-delay: 1s;
+			background-color: white;
+		}
+	</style>
+	<div class="row" style="background: #1E287F;">
+		<div class="col-md-3 border p-0 bg-white">
+
+			<div class="list-group">
+				<a href="https://gquick.com/product-category/electronics/" class="rounded-0 border-0 menu-item list-group-item list-group-item-action" data-submenu="#electronics"><span class="fa fa-microchip"></span> Electronics</a>
+				<a href="https://gquick.com/product-category/cosmetics" class="border-0 menu-item list-group-item list-group-item-action" data-submenu="#cosmetics"><span class="fa fa-spa"></span> Cosmetics</a>
+				<a href="https://gquick.com/product-category/health-and-fitness" class="border-0 menu-item list-group-item list-group-item-action" data-submenu="#health"><span class="fa fa-desktop"></span> Health & Fitness</a>
+				<a href="https://gquick.com/product-category/foods-and-beverages" class="border-0 menu-item list-group-item list-group-item-action" data-submenu="#edibles"><span class="fa fa-hamburger"></span> Foods & Beverages</a>
+				<a href="https://gquick.com/product-category/outdoor" class="border-0 menu-item list-group-item list-group-item-action" data-submenu="#outdoors"><span class="fa fa-sun"></span> Outdoors</a>
+				<a href="https://gquick.com/product-category/household" class="border-0 menu-item list-group-item list-group-item-action" data-submenu="#household"><span class="fa fa-home"></span> Household</a>
+				<a href="https://gquick.com/product-category/gaming" class="border-0 menu-item list-group-item list-group-item-action" data-submenu="#gaming"><span class="fa fa-gamepad"></span> Gaming</a>
+				<a href="https://gquick.com/product-category/accessories" class="border-0 menu-item list-group-item list-group-item-action" data-submenu="#accessories"><span class="fa fa-keyboard"></span> Accessories</a>
+				<a href="https://gquick.com/product-category/security" class="rounded-0 border-0 menu-item list-group-item list-group-item-action" data-submenu="#security"><span class="fa fa-key"></span> Security</a>
+			</div>
+		</div>
+		
+		<div id='carousel' class="col-md-6 my-auto">
+				{% include 'home/banner-section/carousel.html' %}
+		</div>
+		<div id='electronics' class="sub-menu col-md-6">
+			{% include 'home/banner-section/electronics-submenu.html' %}
+		</div>
+		<div id='cosmetics' class="sub-menu col-md-6">
+			{% include 'home/banner-section/cosmetics-submenu.html' %}
+		</div>
+		<div id='health' class="sub-menu col-md-6">
+			{% include 'home/banner-section/health-submenu.html' %}
+		</div>
+		<div id='edibles' class="sub-menu col-md-6">
+			{% include 'home/banner-section/edibles-submenu.html' %}
+		</div>
+		<div id='outdoors' class="sub-menu col-md-6">
+			{% include 'home/banner-section/outdoors-submenu.html' %}
+		</div>
+		<div id='household' class="sub-menu col-md-6">
+			{% include 'home/banner-section/household-submenu.html' %}
+		</div>
+		<div id='gaming' class="sub-menu col-md-6">
+			{% include 'home/banner-section/gaming-submenu.html' %}
+		</div>
+		<div id='accessories' class="sub-menu col-md-6">
+			{% include 'home/banner-section/accessories-submenu.html' %}
+		</div>
+		<div id='security' class="sub-menu col-md-6">
+			{% include 'home/banner-section/security-submenu.html' %}
+		</div>
+
+
+		<div class="col-md-3 d-flex justify-content-around flex-wrap bg-white">
+			{% include 'home/banner-section/events.html' %}
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		$('.sub-menu').hide()
+		$(document).mousemove(function(e){
+			if ($(".menu-item:hover").length != 0){
+				e.target.dataset.submenu
+				console.log('hovering menu item'+e.target.dataset.submenu)
+				$('#carousel').hide()
+				$('.sub-menu').hide()
+				$(e.target.dataset.submenu).show()
+			}
+			else if ($(".sub-menu:hover").length != 0){
+				console.log('hovering sub-menu')
+			} 
+			else{
+				$('.sub-menu').hide()
+				$('#carousel').show()
+			}
+		});
+	</script>
+</div>
+
+{% endblock %}

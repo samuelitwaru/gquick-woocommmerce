@@ -3,7 +3,7 @@ import numpy as np
 from product.create_product import create_product
 
 excel_data_df = pandas.read_excel(
-    'sheets/foods-and-beverages.xlsx', sheet_name='beverages')
+    'sheets/electronics.xlsx', sheet_name='tablets')
 
 
 excel_data_df = excel_data_df.replace({np.nan: None})
@@ -11,7 +11,33 @@ excel_data_df = excel_data_df.replace({np.nan: None})
 
 # print whole sheet data
 data = excel_data_df.to_records()
-
+'''
+ACCESSORIES: 269
+SPEAKER-BAGS: 355
+PHONE-COVERS: 364
+BATTERY-CASES: 377
+BATTERies: 378
+serums: 379
+cosmetics: 228
+cleansers: 380
+toners: 381,
+lotions: 295
+bosy-washes: 382
+bosy-oils: 383
+creams: 384
+sanitizers: 385
+makeup: 233
+sprays: 386
+hair-oils: 387
+mists: 294
+lips-sticks: 388
+perfumes: 291
+deodorants: 389
+vacuum-cleaners: 287
+vacuum-cleaners-household: 371
+electronics: 286
+tablet: 329
+'''
 
 for row in data:
     index = row[0]
@@ -31,10 +57,10 @@ for row in data:
             "short_description": desc,
             "categories": [
                 {
-                    "id": 307
+                    "id": 329
                 },
                 {
-                    "id": 374
+                    "id": 286
                 },
             ],
             "images": [
@@ -56,4 +82,5 @@ for row in data:
             )
             # print(data['images'])
 
-        create_product(data)
+        data = create_product(data)
+        # data['id']
