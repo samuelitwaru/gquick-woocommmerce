@@ -3,7 +3,7 @@ import numpy as np
 from product.create_product import create_product
 
 excel_data_df = pandas.read_excel(
-    'sheets/electronics.xlsx', sheet_name='tablets')
+    'sheets/household.xlsx', sheet_name='tablets')
 
 
 excel_data_df = excel_data_df.replace({np.nan: None})
