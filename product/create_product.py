@@ -12,4 +12,4 @@ wcapi = API(
 
 def create_product(data):
     res = wcapi.post("products", data).json()
-    print(res)
+    return res
