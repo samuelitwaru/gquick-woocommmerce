@@ -14,7 +14,11 @@ def create_product_from_json(path):
     fh = open(path)
     content = fh.read()
     data = json.loads(content)
-    res = wcapi.post("products", data).json()
+    upload_product(data)
+
+
+def upload_product(product_dict):
+    res = wcapi.post("products", product_dict).json()
     print(res)
 
 
