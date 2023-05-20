@@ -3,7 +3,7 @@ import numpy as np
 from product.create_product import create_product
 
 excel_data_df = pandas.read_excel(
-    'sheets/selfcare.xlsx', sheet_name='handbags')
+    'sheets/selfcare.xlsx', sheet_name='gloves')
 
 
 excel_data_df = excel_data_df.replace({np.nan: None})
@@ -16,7 +16,7 @@ data = excel_data_df.to_records()
 ids = ''
 
 categories = [
-    420, 431, 269
+    443, 313, 270
 ]
 
 for row in data:
