@@ -1,6 +1,7 @@
-import pandas as pd
-from upload_product import upload_product
 import numpy as np
+import pandas as pd
+
+from upload_product import upload_product
 
 # read by default 1st sheet of an excel file
 xls = pd.ExcelFile('sheets/cosmetics.xlsx')

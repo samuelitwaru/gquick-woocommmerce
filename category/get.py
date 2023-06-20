@@ -10,10 +10,14 @@ wcapi = API(
 )
 
 
-def get_categories():
-    res = wcapi.get(f"products/categories", params={"per_page": 100}).json()
-    print(len(res))
+def get_categories(page):
+    res = wcapi.get(f"products/categories",
+                    params={"per_page": 100, "page": page}).json()
     # print((res))
     json_str = json.dumps(res)
     with open('json_files/categories.json', 'w') as fh:
         fh.write(json_str)
+        print(json_str)
+
+
+get_categories(3)
